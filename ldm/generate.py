@@ -258,7 +258,6 @@ class Generate:
         self.seed             = seed
         self.log_tokenization = log_tokenization
         with_variations = [] if with_variations is None else with_variations
-
         model = (
             self.load_model()
         )  # will instantiate the model or return it from cache

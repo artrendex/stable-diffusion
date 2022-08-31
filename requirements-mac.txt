@@ -22,3 +22,4 @@ transformers==4.19.2
 -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
 -e git+https://github.com/Birch-san/k-diffusion.git@mps#egg=k-diffusion
 -e git+https://github.com/lstein/GFPGAN@fix-dark-cast-images#egg=gfpgan
+-e git+https://github.com/artrendex/thriftpy2.git@feature/concurrent_limit#egg=thriftpy2

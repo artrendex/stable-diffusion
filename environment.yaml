@@ -30,4 +30,5 @@ dependencies:
     - -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
     - -e git+https://github.com/lstein/k-diffusion.git@master#egg=k-diffusion
     - -e git+https://github.com/lstein/GFPGAN@fix-dark-cast-images#egg=gfpgan
+    - -e git+https://github.com/artrendex/thriftpy2.git@feature/concurrent_limit#egg=thriftpy2
     - -e .

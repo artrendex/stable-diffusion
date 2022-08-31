@@ -1,10 +1,4 @@
-# ignore default image save location and model symbolic link
-outputs/
-models/ldm/stable-diffusion-v1/model.ckpt
-
-# ignore a directory which serves as a place for initial images
-inputs/
-
+### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -12,10 +6,6 @@ __pycache__/
 
 # C extensions
 *.so
-
-# emacs autosave and recovery files
-*~
-.#*
 
 # Distribution / packaging
 .Python
@@ -31,7 +21,6 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -77,9 +66,6 @@ db.sqlite3-journal
 instance/
 .webassets-cache
 
-# WebUI temp files:
-img2img-tmp.png
-
 # Scrapy stuff:
 .scrapy
 
@@ -101,7 +87,6 @@ ipython_config.py
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
 # .python-version
-.python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
@@ -109,21 +94,6 @@ ipython_config.py
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
 #Pipfile.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
-.pdm.toml
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
@@ -167,24 +137,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-
-src
-**/__pycache__/
-outputs
-
-# Logs and associated folders 
-# created from generated embeddings.
-logs
-testtube
-checkpoints
-# If it's a Mac
-.DS_Store
-.idea/
+outputs/
+src/
 tmp/
+.idea/
+.git/
+Dockerfile
+docker-compose.yml

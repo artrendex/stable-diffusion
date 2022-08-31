@@ -1,0 +1,18 @@
+version: "3"
+services:
+  ldmsd:
+    image: ldmsd:latest
+    ports:
+      - "6000:6000"
+    volumes:
+      - "/atx/app/playform/code/tmp:/atx/app/playform/code/tmp"
+    deploy:
+      resources:
+        limits:
+          memory: 14000M
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: always
