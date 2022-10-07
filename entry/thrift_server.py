@@ -10,7 +10,7 @@ from pathlib import Path
 service = thriftpy2.load("entry/service.thrift",
                           module_name="service_thrift")
 
-def do_generate(model, text, output_path: str, image_path: str = None,
+def do_generate(model, output_path: str, text: str = "",  image_path: str = None,
                 width: int = 512, height: int = 512, steps: int = 50, seed: int = None):
     output_path = Path(output_path)
     assert output_path.exists(), "Output path does not exist."
@@ -23,6 +23,9 @@ def do_generate(model, text, output_path: str, image_path: str = None,
         "steps": steps,
         "seed": seed,
     }
+    if not text:
+        assert Path(image_path).exists(), "Image prompt is required if text prompt is empty."
+        kwargs["skip_normalize"] = True
     if image_path and Path(image_path).exists():
         model.img2img(text, **kwargs, init_img=image_path)
     else:
@@ -35,9 +38,8 @@ class Dispatcher(object):
         self.model = Generate()
         self.model.load_model()
 
-    def generate(self, text_input: str, output_path: str, image_path: str = None, width: int = 512, height: int = 512, steps: int = 50, seed: int = None):
-        print(steps, seed)
-        do_generate(self.model, text_input, output_path, image_path, width, height, steps, seed)
+    def generate(self, output_path: str, text_input: str = "", image_path: str = None, width: int = 512, height: int = 512, steps: int = 50, seed: int = None):
+        do_generate(self.model, output_path, text_input, image_path, width, height, steps, seed)
 
 
 def main():

@@ -9,4 +9,4 @@ api_thrift = thriftpy2.load("entry/service.thrift",
 
 if __name__ == '__main__':
     with client_context(api_thrift.StableDiffusion, "0.0.0.0", 6000, socket_timeout=30000) as client:
-        client.generate("a rose", "tmp", seed=None, steps=None)
+        client.generate("tmp", imagePath="tmp/input.png", seed=None, steps=None)

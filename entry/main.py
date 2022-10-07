@@ -20,7 +20,7 @@ def main():
     args = parser.parse_args()
     if args.process == "generate":
         model = Generate()
-        do_generate(model, args.text, args.output_path, args.image_path, args.width, args.height, args.steps, args.seed)
+        do_generate(model, args.output_path, args.text, args.image_path, args.width, args.height, args.steps, args.seed)
     else:
         ip, port = args.address.split(':')
         server = make_server(service.StableDiffusion, Dispatcher(),
